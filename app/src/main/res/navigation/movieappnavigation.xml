@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/movieappnavigation"
+    app:startDestination="@id/moviesFragment">
+
+    <fragment
+        android:id="@+id/seriesFragment"
+        android:name="com.example.movieapplication.features.moviefeature.view.fragments.SeriesFragment"
+        android:label="fragment_series"
+        tools:layout="@layout/fragment_series" >
+        <action
+            android:id="@+id/action_seriesFragment_to_mediaDetailsFragment"
+            app:destination="@id/mediaDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mediaDetailsFragment"
+        android:name="com.example.movieapplication.features.moviefeature.view.fragments.MediaDetailsFragment"
+        android:label="fragment_movie_details"
+        tools:layout="@layout/fragment_movie_details" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <argument
+            android:name="mediaType"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_mediaDetailsFragment_to_personDetails"
+            app:destination="@id/personDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/moviesFragment"
+        android:name="com.example.movieapplication.features.moviefeature.view.fragments.MoviesFragment"
+        android:label="fragment_movies"
+        tools:layout="@layout/fragment_movies" >
+        <action
+            android:id="@+id/action_moviesFragment_to_mediaDetailsFragment"
+            app:destination="@id/mediaDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/peopleFragment"
+        android:name="com.example.movieapplication.features.moviefeature.view.fragments.PeopleFragment"
+        android:label="fragment_people"
+        tools:layout="@layout/fragment_people" >
+        <action
+            android:id="@+id/action_peopleFragment_to_personDetails"
+            app:destination="@id/personDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/personDetails"
+        android:name="com.example.movieapplication.features.moviefeature.view.fragments.PersonDetails"
+        android:label="fragment_person_details"
+        tools:layout="@layout/fragment_person_details" >
+        <action
+            android:id="@+id/action_personDetails_to_mediaDetailsFragment"
+            app:destination="@id/mediaDetailsFragment" />
+        <argument android:name="id"
+            app:argType="integer" />
+    </fragment>
+</navigation>
